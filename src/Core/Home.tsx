@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React from "react";
+import React, { useState } from "react";
 import "./Home.css";
 import HallButton from "../Components/HallButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,8 +10,15 @@ import { faGear } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
+import NavBar from "../Components/NavBar";
 
 const Home = () => {
+  const [selectedIndex, setSelectedIndex] = useState(null);
+
+  const handleSelect = (index) => {
+    setSelectedIndex(index);
+  };
+
   return (
     <>
       <div
@@ -20,7 +27,14 @@ const Home = () => {
       >
         <div className="min-w-60 w-60 border-r-1 border-r-gray-300 hidden md:block flex-col justify-start align-middle p-1.5 mt-1.5">
           <div className="w-full text-xl text-center mb-4">Place for logo</div>
-          <HallButton />
+          {[0, 1, 2, 3].map((index) => (
+            <HallButton
+              key={index}
+              selected={selectedIndex === index}
+              onClick={() => handleSelect(index)}
+              hallName={`Hall ${index + 1}`}
+            />
+          ))}
         </div>
 
         <div className="w-full flex-col justify-center items-center h-screen overflow-y-auto mr-1 pb-12">
@@ -28,16 +42,9 @@ const Home = () => {
           <PostCard />
           <PostCard />
           <PostCard />
-          <div
-            style={{ backgroundColor: "#121212" }}
-            className="md:hidden fixed bottom-0 w-full border-[0.25px] border-gray-500 text-center p-2 h-12 flex justify-around items-center"
-          >
-            <FontAwesomeIcon icon={faHouse} size="xl"/>
-            <FontAwesomeIcon icon={faMagnifyingGlass} size="xl"/>
-            <FontAwesomeIcon icon={faGear} size="xl"/>
-            <FontAwesomeIcon icon={faUser} size="xl"/>
-            <FontAwesomeIcon icon={faCamera} size="xl"/>
-          </div>
+          
+          <NavBar selected={2} />
+          
         </div>
 
         <div className="w-60 min-w-50 flex-col justify-start items-center h-screen hidden md:flex">

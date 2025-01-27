@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faComment, faHeart } from "@fortawesome/free-regular-svg-icons";
@@ -30,7 +31,7 @@ const PostCard = () => {
         <div className="flex w-full py-2 justify-between">
           <div className="flex">
             <FontAwesomeIcon
-            //<FontAwesomeIcon icon="fa-solid fa-trophy" style={{color: "#d7a904",}} />
+              //<FontAwesomeIcon icon="fa-solid fa-trophy" style={{color: "#d7a904",}} />
               icon={faTrophy}
               size="lg"
               className="ml-2.5 hover:text-gray-400"
