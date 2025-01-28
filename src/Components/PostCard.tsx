@@ -34,14 +34,14 @@ const PostCard = () => {
               //<FontAwesomeIcon icon="fa-solid fa-trophy" style={{color: "#d7a904",}} />
               icon={faTrophy}
               size="lg"
-              className="ml-2.5 hover:text-gray-400"
+              className="ml-2 hover:text-gray-400"
             />
             <p className="ml-2 font-mono">200</p>
 
             <FontAwesomeIcon
               icon={faPenNib}
               size="lg"
-              className="ml-6 hover:text-gray-400"
+              className="ml-5.5 hover:text-gray-400"
             />
             <p className="ml-2 mr-5 font-mono">108</p>
           </div>

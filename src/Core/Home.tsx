@@ -11,6 +11,8 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import NavBar from "../Components/NavBar";
+import { faSquarePlus } from "@fortawesome/free-regular-svg-icons";
+import { faChessRook } from "@fortawesome/free-regular-svg-icons";
 
 const Home = () => {
   const [selectedIndex, setSelectedIndex] = useState(null);
@@ -42,9 +44,8 @@ const Home = () => {
           <PostCard />
           <PostCard />
           <PostCard />
-          
+
           <NavBar selected={2} />
-          
         </div>
 
         <div className="w-60 min-w-50 flex-col justify-start items-center h-screen hidden md:flex">
@@ -64,8 +65,14 @@ const Home = () => {
 
           <div className="w-full flex pr-1.5">
             <div className="bg-purple-600 w-full h-18 rounded-md text-center flex flex-col justify-center align-middle items-center hover:bg-purple-500 cursor-pointer">
-              <FontAwesomeIcon icon={faCamera} size="2xl" className="mt-2" />
+              <FontAwesomeIcon icon={faSquarePlus} size="2xl" className="mt-2" />
               ShameShare
+            </div>
+          </div>
+          <div className="w-full flex pr-1.5">
+            <div className="mt-3 bg-purple-600 w-full h-18 rounded-md text-center flex flex-col justify-center align-middle items-center hover:bg-purple-500 cursor-pointer">
+              <FontAwesomeIcon icon={faChessRook} size="2xl" className="mt-2" />
+              Create Hall
             </div>
           </div>
 
